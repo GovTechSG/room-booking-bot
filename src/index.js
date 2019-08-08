@@ -18,6 +18,7 @@ const CONFIG = require('../config/Settings')
 // Set up Slack tokens and Slack-Node-Api
 const slackSigningSecret = process.env.SLACK_SIGNING_SECRET;
 const slackBotAccessToken = process.env.BOT_ACCESS_TOKEN;
+const calendarViewUrl = process.env.CALENDAR_URL;
 
 if (!slackSigningSecret || !slackBotAccessToken) {
   throw new Error('A Slack signing secret and access token are required to run this app.');
@@ -85,7 +86,7 @@ function slackSlashCommand(request, respond, next) {
 
       } else if (type === 'view') {
         console.log('(/book view) entered')
-        respond.send('*Check out this link for the overall room booking schedules*: https://sweezharbot.dcube.cf');
+        respond.send(`*Check out this link for the overall room booking schedules*: ${calendarViewUrl}`);
       } else if (type === 'delete') {
         console.log('(/book delete) entered')
 
