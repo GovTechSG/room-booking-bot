@@ -40,11 +40,15 @@ npm start
     * e.g. if you used ngrock, it would be something similar to `https://9e123bs8.ngrok.io/slack/actions`
 
 ### Set Up Credentials
-Copy [.sample-env](.sample-env) to `.env` and replace with your own env variables
+1. Copy [.sample-env](.sample-env) to `.env` and replace with your own env variables
     * The variables can be found either in the **OAuth & Permissions** or the **Basic Information** page
+ 2. Create a folder `config` in the root directory
+	 * Copy [sample-CalendarConfig.js](sample-CalendarConfig.js) to `config/CalendarConfig.js` and [sample-Settings.js](sample-Settings.js) to `config/Settings.js`; then replace with your own variables
+	 
 
 ### Set Up Google Calendar 
 1. [Setup & grant permission to test google calendar, service account and get auth key](https://github.com/yuhong90/node-google-calendar/wiki#setup-service-accounts)
+2.  Download `google-api-key.json` once you have your service account set up; place it in `config` folder
 
 
 ## Contributing
